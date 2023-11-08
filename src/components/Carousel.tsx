@@ -3,14 +3,13 @@ import React, { useRef } from "react";
 
 interface CarouselProps {
     images: string[];
-    router: any
 }
 
-export default function Carousel({ images, router }: CarouselProps) {
+export default function Carousel({ images }: CarouselProps) {
     const productListItems = useRef<HTMLDivElement | null>(null);
 
     return (
-        <div className="relative overflow-hidden shadow-lg" onClick={() => openLinkInSamePage("/eventos", router)}>
+        <div className="relative overflow-hidden shadow-lg" onClick={() => openLinkInSamePage("/eventos")}>
             <div
                 className="flex w-max transition-transform duration-700"
                 ref={productListItems}

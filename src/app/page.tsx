@@ -4,11 +4,8 @@ import Carousel from "@/components/Carousel";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ProductList from "@/components/ProductList";
-import { useRouter } from "next/router";
 
 export default function Home() {
-    const router = useRouter();
-
     return (
         <>
             <Header />
@@ -18,7 +15,6 @@ export default function Home() {
                     images={[
                         "/chaos-soccer-gear-Cjfl8r_eYxY-unsplash.jpg",
                     ]}
-                    router={router}
                 />
 
                 <ProductList name="Contribuições Sociais" items={[

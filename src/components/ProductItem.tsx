@@ -7,8 +7,6 @@ export default function ProductItem({
     price,
     redirectURL
 }: { name: string, price: number, redirectURL: string }) {
-
-
     const formatter = new Intl.NumberFormat("pt-BR", {
         minimumFractionDigits: 2,
     });

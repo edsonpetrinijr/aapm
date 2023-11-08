@@ -1,5 +1,3 @@
-import { useRouter } from 'next/router';
-
-export default function openLinkInSamePage(url: string, router: ReturnType<typeof useRouter>) {
-    router.push(url);
+export default function openLinkInSamePage(url: string) {
+    window.location.href = url;
 };

@@ -12,7 +12,7 @@ export default function Footer() {
     };
 
     const SocialIcon: React.FC<{ icon: IconType; url: string }> = ({ icon, url }) => (
-        <li className="w-10 h-10 rounded-full flex justify-center items-center hover:bg-zinc-100 transition-all mx-2 shadow-lg">
+        <li className="bg-white w-10 h-10 rounded-full flex justify-center items-center hover:bg-zinc-100 transition-all mx-2 shadow-lg">
             <button
                 className="w-10 h-10 rounded-full flex justify-center items-center"
                 onClick={() => openLinkInNewTab(url)}

@@ -35,7 +35,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <header className="flex w-full justify-between items-center shadow-lg px-12 py-5 mb-8">
+            <header className="flex w-full justify-between items-center shadow-[0px_6px_32px_0px_rgba(0,0,0,0.10)] px-12 py-5 mb-8 bg-white">
                 <Image
                     src="/image.svg"
                     alt="Logo do SENAI"

@@ -23,8 +23,18 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: #ECEFF1;
+    min-height: 100vh;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 
 /* body {
   color: rgb(var(--foreground-rgb));

@@ -1,5 +1,6 @@
-import Image from "next/image";
 import React, { useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import colors from "tailwindcss/colors";
 
@@ -9,7 +10,9 @@ export default function Header() {
 
     const handleShowMenu = () => {
         if (menu.current) {
-            menu.current.style.transform = showMenu ? "translateX(100vw)" : "translateX(0vw)";
+            menu.current.style.transform = showMenu
+                ? "translateX(100vw)"
+                : "translateX(0vw)";
         }
 
         setShowMenu((state) => !state);
@@ -18,38 +21,69 @@ export default function Header() {
     return (
         <>
             <div
-                className={`w-screen h-screen fixed z-50 transition-all ${showMenu ? "" : "translate-x-[100vw]"}`}
+                className={`w-screen h-screen fixed z-50 transition-all ${
+                    showMenu ? "" : "translate-x-[100vw]"
+                }`}
                 ref={menu}
             >
                 <div className="w-2/3 h-screen bg-zinc-100 right-0 p-10 fixed shadow-2xl">
                     <button onClick={handleShowMenu}>
-                        <FiX size={32} className="absolute top-7 right-16 cursor-pointer" />
+                        <FiX
+                            size={32}
+                            className="absolute top-7 right-16 cursor-pointer"
+                        />
                     </button>
 
                     <ul>
-                        <li className="mb-4"><a href="">Eventos</a></li>
-                        <li className="mb-4"><a href="">Nossos Produtos</a></li>
-                        <li className="mb-4"><a href="">Prestação de Contas</a></li>
-                        <li className="mb-4"><a href="">Sobre</a></li>
+                        <li className="mb-4">
+                            <Link href="/eventos">Eventos</Link>
+                        </li>
+                        <li className="mb-4">
+                            <Link href="/produtos">Nossos Produtos</Link>
+                        </li>
+                        <li className="mb-4">
+                            <Link href="/prestacao-de-contas">
+                                Prestação de Contas
+                            </Link>
+                        </li>
+                        <li className="mb-4">
+                            <Link href="/ESTATUTO DA AAPM.pdf">
+                                Estatudo da AAPM
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <header className="flex w-full justify-between items-center shadow-[0px_6px_32px_0px_rgba(0,0,0,0.10)] px-12 py-5 mb-8 bg-white">
-                <Image
-                    src="/image.svg"
-                    alt="Logo do SENAI"
-                    width={200}
-                    height={64}
-                    priority
-                />
+                <Link href="/">
+                    <Image
+                        src="/image.svg"
+                        alt="Logo do SENAI"
+                        width={200}
+                        height={64}
+                        priority
+                    />
+                </Link>
 
                 <nav className="hidden lg:block">
                     <ul className="flex justify-end items-center gap-12">
-                        <li><a href="">Eventos</a></li>
-                        <li><a href="">Nossos Produtos</a></li>
-                        <li><a href="">Prestação de Contas</a></li>
-                        <li><a href="">Sobre</a></li>
+                        <li>
+                            <Link href="/eventos">Eventos</Link>
+                        </li>
+                        <li>
+                            <Link href="/produtos">Nossos Produtos</Link>
+                        </li>
+                        <li>
+                            <Link href="/prestacao-de-contas">
+                                Prestação de Contas
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/ESTATUTO DA AAPM.pdf">
+                                Estatudo da AAPM
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
 
@@ -65,4 +99,4 @@ export default function Header() {
             </header>
         </>
     );
-};
+}

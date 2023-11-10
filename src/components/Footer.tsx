@@ -11,13 +11,20 @@ export default function Footer() {
         window.open(url, "_blank");
     };
 
-    const SocialIcon: React.FC<{ icon: IconType; url: string }> = ({ icon, url }) => (
-        <li className="bg-white w-10 h-10 rounded-full flex justify-center items-center hover:bg-zinc-100 transition-all mx-2 shadow-lg">
+    const SocialIcon: React.FC<{ icon: IconType; url: string }> = ({
+        icon,
+        url,
+    }) => (
+        <li className="bg-white w-10 h-10 rounded-full flex justify-center items-center hover:bg-zinc-100 transition-all mx-2 mt-auto shadow-lg">
             <button
                 className="w-10 h-10 rounded-full flex justify-center items-center"
                 onClick={() => openLinkInNewTab(url)}
             >
-                {icon({ size: 20, fill: colors.zinc[700], stroke: colors.zinc[700] })}
+                {icon({
+                    size: 20,
+                    fill: colors.zinc[700],
+                    stroke: colors.zinc[700],
+                })}
             </button>
         </li>
     );
@@ -28,12 +35,21 @@ export default function Footer() {
 
             <div className="flex flex-col justify-center items-center p-4">
                 <ul className="flex flex-row mb-2">
-                    <SocialIcon icon={FiLinkedin} url="https://www.linkedin.com/in/edsonpetrinijr/" />
-                    <SocialIcon icon={FiGithub} url="https://github.com/edsonpetrinijr" />
-                    <SocialIcon icon={FiTwitter} url="https://twitter.com/edsonpetrinijr" />
+                    <SocialIcon
+                        icon={FiLinkedin}
+                        url="https://www.linkedin.com/in/edsonpetrinijr/"
+                    />
+                    <SocialIcon
+                        icon={FiGithub}
+                        url="https://github.com/edsonpetrinijr"
+                    />
+                    <SocialIcon
+                        icon={FiTwitter}
+                        url="https://twitter.com/edsonpetrinijr"
+                    />
                 </ul>
 
-                <p>Edson Junior © {year}</p>
+                <p>Edson Junior e Caio Takabatake © {year}</p>
             </div>
         </footer>
     );

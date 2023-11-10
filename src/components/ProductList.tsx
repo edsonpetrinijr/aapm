@@ -24,7 +24,9 @@ export default function ProductList({ name, items }: ProductListProps) {
 
     useEffect(() => {
         if (productListItems.current) {
-            productListItems.current.style.transform = `translateX(-${currentIndex * (100 / (maxIndex + 1))}%)`;
+            productListItems.current.style.transform = `translateX(-${
+                currentIndex * (100 / (maxIndex + 1))
+            }%)`;
         }
     }, [currentIndex]);
 
@@ -35,9 +37,6 @@ export default function ProductList({ name, items }: ProductListProps) {
     const handleArrowRightClick = () => {
         setCurrentIndex(currentIndex < maxIndex ? currentIndex + 1 : 0);
     };
-
-    const filteredItems = items;
-    // const filteredItems = items.filter((item) => item.quantity !== 0);
 
     return (
         <div className="relative overflow-hidden px-12 py-6">
@@ -55,13 +54,15 @@ export default function ProductList({ name, items }: ProductListProps) {
                 <FiChevronRight size={24} className="opacity-75" />
             </button>
 
-            <h1 className="text-center lg:text-4xl text-2xl font-bold uppercase mb-4">{name}</h1>
+            <h1 className="text-center lg:text-4xl text-2xl font-bold uppercase mb-4">
+                {name}
+            </h1>
 
             <ul
                 className="flex float-left transition-transform list-none"
                 ref={productListItems}
             >
-                {filteredItems.map(({ name, price, redirectURL }) => (
+                {items.map(({ name, price, redirectURL }) => (
                     <ProductItem
                         key={name}
                         name={name}

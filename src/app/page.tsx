@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Carousel from "@/components/Carousel";
 import ProductList from "@/components/ProductList";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -57,6 +58,29 @@ export default function Home() {
                         },
                     ]}
                 />
+
+                <div className="w-full bg-white p-8 shadow-lg mt-8 flex flex-col items-center">
+                    <h2 className="w-full text-center text-3xl font-bold mb-2 uppercase">
+                        Apoie a Educação
+                    </h2>
+
+                    <div className="w-full px-40">
+                        <p>
+                            Seja parte dessa troca incrível! Mande seu
+                            comprovante e receba um recadinho especial do aluno
+                            que você ajudou. Vamos juntos fazer a diferença na
+                            jornada educacional deles!
+                        </p>
+                    </div>
+
+                    <Link
+                        href="  https://wa.me/19984340213"
+                        target="_blank"
+                        className="w-full text-[#EB3E3E] rounded-full font-bold mt-2 text-center mx-auto px-auto"
+                    >
+                        Mande o comprovante no WhatsApp
+                    </Link>
+                </div>
             </main>
 
             <Footer />

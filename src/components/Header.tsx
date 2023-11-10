@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import colors from "tailwindcss/colors";
+import { redirect } from "next/navigation";
 
 export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
@@ -21,7 +22,7 @@ export default function Header() {
     return (
         <>
             <div
-                className={`w-screen h-screen fixed z-50 transition-all ${
+                className={`w-screen h-screen fixed z-50 transition-all lg:hidden ${
                     showMenu ? "" : "translate-x-[100vw]"
                 }`}
                 ref={menu}
@@ -48,7 +49,7 @@ export default function Header() {
                         </li>
                         <li className="mb-4">
                             <Link href="/ESTATUTO DA AAPM.pdf">
-                                Estatudo da AAPM
+                                Estatuto da AAPM
                             </Link>
                         </li>
                     </ul>
@@ -56,15 +57,16 @@ export default function Header() {
             </div>
 
             <header className="flex w-full justify-between items-center shadow-[0px_6px_32px_0px_rgba(0,0,0,0.10)] px-12 py-5 mb-8 bg-white">
-                <Link href="/">
-                    <Image
-                        src="/image.svg"
-                        alt="Logo do SENAI"
-                        width={200}
-                        height={64}
-                        priority
-                    />
-                </Link>
+                <Image
+                    onClick={() => {
+                        window.location.href = "/";
+                    }}
+                    src="/image.svg"
+                    alt="Logo do SENAI"
+                    width={200}
+                    height={64}
+                    priority
+                />
 
                 <nav className="hidden lg:block">
                     <ul className="flex justify-end items-center gap-12">

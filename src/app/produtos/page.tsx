@@ -2,10 +2,8 @@
 
 import React from "react";
 import Header from "@/components/Header";
-import ProductList from "@/components/ProductList";
-import Footer from "@/components/Footer";
-import ProductItem from "@/components/ProductItem";
 import ProductPageItem from "@/components/ProductPageItem";
+import Footer from "@/components/Footer";
 
 export default function Eventos() {
     const data = {
@@ -56,7 +54,7 @@ export default function Eventos() {
                 },
             },
             {
-                nome: "OCULOS MOD. LEOPARDO E RJ",
+                nome: "ÓCULOS MOD. LEOPARDO E RJ",
                 naoSocio: {
                     preco: 6.0,
                 },
@@ -65,7 +63,7 @@ export default function Eventos() {
                 },
             },
             {
-                nome: "OCULOS MOD. PANDA",
+                nome: "ÓCULOS MOD. PANDA",
                 naoSocio: {
                     preco: 10.0,
                 },
@@ -297,7 +295,7 @@ export default function Eventos() {
                 },
             },
             {
-                nome: "Jaleco",
+                nome: "JALECO",
                 naoSocio: {
                     preco: 15.0,
                 },
@@ -337,34 +335,24 @@ export default function Eventos() {
 
             <main>
                 <h1 className="text-center lg:text-4xl text-2xl font-bold uppercase mb-4">
-                    Preços para Sócios
-                </h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-12 gap-4 mb-8">
-                    {data.produtos.map(
-                        (item) =>
-                            item.socio.preco && (
-                                <ProductPageItem
-                                    key={item.nome}
-                                    name={item.nome}
-                                    price={item.socio.preco}
-                                />
-                            )
-                    )}
-                </div>
-
-                <h1 className="text-center lg:text-4xl text-2xl font-bold uppercase mb-4">
-                    Preços para Não Sócios
+                    Nossos Produtos
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-12 gap-4">
-                    {data.produtos.map(
-                        (item) =>
-                            item.socio.preco && (
-                                <ProductPageItem
-                                    key={item.nome}
-                                    name={item.nome}
-                                    price={item.naoSocio.preco}
-                                />
-                            )
+                    {data.produtos.map((item) =>
+                        item.socio.preco ? (
+                            <ProductPageItem
+                                key={item.nome}
+                                name={item.nome}
+                                priceForAAPMPartner={item.socio.preco}
+                                priceForNonAAPMPartner={item.naoSocio.preco}
+                            />
+                        ) : (
+                            <ProductPageItem
+                                key={item.nome}
+                                name={item.nome}
+                                priceForNonAAPMPartner={item.naoSocio.preco}
+                            />
+                        )
                     )}
                 </div>
             </main>

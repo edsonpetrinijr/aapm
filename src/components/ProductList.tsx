@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import ProductItem from "./ProductItem";
+import ProductItem from "@/components/ProductItem";
 
 interface Product {
     name: string;
@@ -39,7 +39,7 @@ export default function ProductList({ name, items }: ProductListProps) {
     };
 
     return (
-        <div className="relative overflow-hidden px-12 py-6">
+        <div className="relative overflow-hidden px-12 pt-6">
             <button
                 className="absolute z-10 top-1/2 transform -translate-y-1/2 left-8 bg-zinc-300 bg-opacity-30 p-1.5 rounded-full cursor-pointer"
                 onClick={handleArrowLeftClick}

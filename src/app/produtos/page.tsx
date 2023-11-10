@@ -344,6 +344,7 @@ export default function Eventos() {
                         (item) =>
                             item.socio.preco && (
                                 <ProductPageItem
+                                    key={item.nome}
                                     name={item.nome}
                                     price={item.socio.preco}
                                 />
@@ -359,6 +360,7 @@ export default function Eventos() {
                         (item) =>
                             item.socio.preco && (
                                 <ProductPageItem
+                                    key={item.nome}
                                     name={item.nome}
                                     price={item.naoSocio.preco}
                                 />

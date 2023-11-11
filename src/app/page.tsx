@@ -64,7 +64,7 @@ export default function Home() {
                         Apoie a Educação
                     </h2>
 
-                    <div className="w-full px-40">
+                    <div className="w-full px-4 lg:px-40">
                         <p>
                             Seja parte dessa troca incrível! Mande seu
                             comprovante e receba um recadinho especial do aluno

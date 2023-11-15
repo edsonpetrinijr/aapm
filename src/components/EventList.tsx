@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import EventItem from "@/components/EventItem";
 

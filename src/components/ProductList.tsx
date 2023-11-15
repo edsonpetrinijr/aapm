@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import ProductItem from "@/components/ProductItem";
@@ -24,9 +26,8 @@ export default function ProductList({ name, items }: ProductListProps) {
 
     useEffect(() => {
         if (productListItems.current) {
-            productListItems.current.style.transform = `translateX(-${
-                currentIndex * (100 / (maxIndex + 1))
-            }%)`;
+            productListItems.current.style.transform = `translateX(-${currentIndex * (100 / (maxIndex + 1))
+                }%)`;
         }
     }, [currentIndex]);
 

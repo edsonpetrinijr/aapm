@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Link from "next/link";
 
 interface CarouselProps {
@@ -6,14 +6,11 @@ interface CarouselProps {
 }
 
 export default function Carousel({ images }: CarouselProps) {
-    const productListItems = useRef<HTMLDivElement | null>(null);
-
     return (
         <Link href="/eventos">
             <div className="relative overflow-hidden shadow-lg">
                 <div
                     className="flex w-max transition-transform duration-700"
-                    ref={productListItems}
                 >
                     {images.map((image, index) => (
                         <img

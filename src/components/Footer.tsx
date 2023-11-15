@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { IconType } from "react-icons";
